@@ -22,12 +22,14 @@
 
 ## Networking
 
-Explored network configuration, DNS resolution, port scanning, and live traffic capture.
+### Summary
+Understanding how data moves across a network is essential for any security role. I explored how my VM was addressed on the network, how DNS resolves domain names, what ports and services were exposed, and how to capture and analyze live traffic — the same skills used in network security monitoring.
 
-**What I Did**
-- Checked IP addressing and routing tables
+### What I Did
+- Checked IP addressing and routing tables with ip addr and ip route
 - Performed DNS lookups using nslookup and dig
-- Scanned open ports and services with Nmap
+- Scanned open ports and running services with Nmap
+- Traced packet routes across the internet with traceroute
 - Captured and filtered live network traffic with Wireshark
 
 **Screenshots**
@@ -60,13 +62,14 @@ Explored network configuration, DNS resolution, port scanning, and live traffic 
 
 ## Firewall
 
-Configured ufw and iptables to control inbound and outbound network traffic.
+### Summary
+A firewall is the first line of defense for any server. I configured both ufw for simplified rule management and iptables for low-level traffic control — blocking all unwanted inbound connections while allowing only the services I explicitly permitted.
 
-**What I Did**
-- Set default deny on all incoming traffic
+### What I Did
+- Set default deny on all incoming traffic with ufw
 - Allowed only SSH (port 22) and HTTP (port 80)
-- Added and removed custom iptables rules
-- Verified active rules with ufw status and iptables -L
+- Added and removed custom iptables rules manually
+- Verified all active rules with ufw status verbose and iptables -L
 
 **Screenshots**
 
@@ -80,14 +83,15 @@ Configured ufw and iptables to control inbound and outbound network traffic.
 
 ## Audit Logging
 
-Configured auditd to monitor critical system files and analyzed authentication logs.
+### Summary
+Audit logging is how security teams detect unauthorized changes on a system. I configured auditd to watch critical system files and set up log analysis to identify failed login attempts — the same techniques used in real incident response.
 
-**What I Did**
+### What I Did
 - Installed and enabled auditd
-- Set watches on /etc/passwd and /etc/shadow
-- Triggered audit events by adding a test user
-- Searched audit logs with ausearch
-- Analyzed auth.log for failed login attempts and suspicious IPs
+- Set watches on /etc/passwd and /etc/shadow to detect unauthorized modifications
+- Triggered audit events by adding a test user and confirmed they were captured
+- Searched audit logs with ausearch and generated reports with aureport
+- Analyzed auth.log to identify failed login attempts and suspicious source IPs
 
 **Screenshots**
 
@@ -104,12 +108,13 @@ Configured auditd to monitor critical system files and analyzed authentication l
 
 ## Scripting
 
-Built Bash and Python scripts to automate security tasks and monitor system activity.
+### Summary
+Manual monitoring doesn't scale — security engineers automate everything they can. I wrote a Bash script to harden a fresh server automatically, and two Python tools to monitor authentication logs and alert on suspicious IP behavior in real time.
 
-**What I Did**
-- Wrote a Bash hardening script that configures ufw, Fail2ban, and SSH automatically
-- Built a Python auth monitor that reads /var/log/auth.log and reports system stats every 30 seconds
-- Built a Python IP alert system that detects IPs exceeding a failed login threshold
+### What I Did
+- Wrote a Bash hardening script that installs and configures ufw, Fail2ban, and SSH in one run
+- Built a Python auth monitor that reads /var/log/auth.log and reports CPU, RAM, disk, and failed login counts every 30 seconds
+- Built a Python IP alert system that tracks failed login attempts per IP and fires an alert when a threshold is crossed — mimicking what real SIEM tools do
 
 **Screenshots**
 
@@ -126,14 +131,15 @@ Built Bash and Python scripts to automate security tasks and monitor system acti
 
 ## Docker
 
-Containerized the Python security monitor using Docker.
+### Summary
+Docker is used in virtually every modern tech environment to run applications in isolated, portable containers. I packaged my Python security monitor into a Docker image so it can be deployed on any server instantly — the same workflow used in production security tooling.
 
-**What I Did**
-- Installed Docker on Ubuntu 24.04
-- Ran an Nginx container to verify Docker was working
-- Built a custom Docker image for the Python auth monitor
-- Mounted /var/log as read-only so the container could access live auth logs
-- Verified the monitor was running inside the container using docker logs
+### What I Did
+- Installed Docker on Ubuntu 24.04 and verified it with a hello-world container
+- Ran an Nginx web server container to understand port mapping and container lifecycle
+- Wrote a Dockerfile to package the Python auth monitor into a custom image
+- Mounted /var/log as read-only so the container could access live system auth logs
+- Verified the monitor was running correctly inside the container using docker logs
 
 **Screenshots**
 
