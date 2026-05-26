@@ -5,8 +5,6 @@ This project documents a fully functional cybersecurity home lab built from scra
 
 Over the course of this lab I configured SSH key-based authentication, built firewall rules from the ground up, set up automated intrusion detection with Fail2ban, monitored system activity with auditd, wrote custom Bash and Python security tools, captured live network traffic with Wireshark, and containerized my monitoring tool using Docker. Everything was done manually through the terminal to build deep understanding of how each component works.
 
-This lab was built to strengthen my foundation in Linux security ahead of pursuing a career in cybersecurity.
-
 ## Tools Used
 - VirtualBox
 - Ubuntu 24.04
@@ -26,7 +24,7 @@ This lab was built to strengthen my foundation in Linux security ahead of pursui
 ## Linux Fundamentals
 
 ### Summary
-Before diving into security, I got comfortable with the Linux environment itself. I learned how to navigate the filesystem, manage users and groups, and control file permissions — all foundational skills for any security role.
+Before diving into security I got comfortable with the Linux environment itself. I learned how to navigate the filesystem, manage users and groups, and control file permissions — all foundational skills for any security role.
 
 ### What I Did
 - Navigated the filesystem using core terminal commands (pwd, ls, cd, cat, cp, mv, rm)
@@ -38,12 +36,12 @@ Before diving into security, I got comfortable with the Linux environment itself
 **Screenshots**
 
 ### Login Screen
-![Login Screen](Linux-Fundamentals/linuxloginscreen.png)
+![Login Screen](Linux-Fundamentals/linuxloginscren.png)
 
 ### Desktop
-![Desktop](Linux-Fundamentals/linuxhomescreen.png)
+![Desktop](Linux-Fundamentals/FgksZTGUoAAGzDW-scaled.png)
 
-### System Info — uname and df
+### System Info — uname
 ![uname](Linux-Fundamentals/uname.png)
 
 ### Running Processes — ps aux
@@ -121,7 +119,7 @@ Understanding how data moves across a network is essential for any security role
 ![Nmap](Networking/nmapshowingportsandservicesopen.png)
 
 ### Port 80 Open — Apache Running
-![Port 80](Networking/port80open.png)
+![Port 80](Networking/por80open.png)
 
 ### Port 200 Open
 ![Port 200](Networking/port20Open.png)
@@ -161,7 +159,7 @@ A firewall is the first line of defense for any server. I configured both ufw fo
 ## Audit Logging
 
 ### Summary
-Audit logging is how security teams detect unauthorized changes on a system. I configured auditd to watch critical system files and set up log analysis to identify failed login attempts — the same techniques used in real incident response.
+Audit logging is how security teams detect unauthorized changes on a system. I configured auditd to watch critical system files and analyzed authentication logs to identify failed login attempts — the same techniques used in real incident response.
 
 ### What I Did
 - Installed and enabled auditd
@@ -186,7 +184,7 @@ Audit logging is how security teams detect unauthorized changes on a system. I c
 ## Scripting
 
 ### Summary
-Manual monitoring doesn't scale — security engineers automate everything they can. I wrote a Bash script to harden a fresh server automatically, and two Python tools to monitor authentication logs and alert on suspicious IP behavior in real time.
+Manual monitoring does not scale — security engineers automate everything they can. I wrote a Bash script to harden a fresh server automatically, and two Python tools to monitor authentication logs and alert on suspicious IP behavior in real time.
 
 ### What I Did
 - Wrote a Bash hardening script that installs and configures ufw, Fail2ban, and SSH in one run
@@ -221,4 +219,4 @@ Docker is used in virtually every modern tech environment to run applications in
 **Screenshots**
 
 ### Python Script Running in Container
-![Docker Container](Docker/pythonscriptrunningincontainer.png)
+![Docker Container](Docker/pythonscriptrunningcontainer.png)
