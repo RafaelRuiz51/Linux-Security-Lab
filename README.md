@@ -1,3 +1,80 @@
+# Linux Security Lab
+
+## Summary
+This project documents a fully functional cybersecurity home lab built from scratch on Ubuntu 24.04 running inside VirtualBox. The goal was to simulate a real-world hardened Linux server environment and develop hands-on experience with the tools and techniques used by security engineers and SOC analysts every day.
+
+Over the course of this lab I configured SSH key-based authentication, built firewall rules from the ground up, set up automated intrusion detection with Fail2ban, monitored system activity with auditd, wrote custom Bash and Python security tools, captured live network traffic with Wireshark, and containerized my monitoring tool using Docker. Everything was done manually through the terminal to build deep understanding of how each component works.
+
+This lab was built to strengthen my foundation in Linux security ahead of pursuing a career in cybersecurity.
+
+## Tools Used
+- VirtualBox
+- Ubuntu 24.04
+- SSH / OpenSSH
+- ufw / iptables
+- Fail2ban
+- auditd
+- Nmap
+- Wireshark
+- Python 3
+- Bash
+- Docker
+- Git
+
+---
+
+## Linux Fundamentals
+
+### Summary
+Before diving into security, I got comfortable with the Linux environment itself. I learned how to navigate the filesystem, manage users and groups, and control file permissions — all foundational skills for any security role.
+
+### What I Did
+- Navigated the filesystem using core terminal commands (pwd, ls, cd, cat, cp, mv, rm)
+- Monitored system resources with top, df, free, and uptime
+- Created users and groups and managed group membership
+- Modified file permissions and ownership using chmod and chown
+- Verified running processes with ps aux
+
+**Screenshots**
+
+### Login Screen
+![Login Screen](Linux-Fundamentals/linuxloginscren.png)
+
+### Desktop
+![Desktop](Linux-Fundamentals/linuxhomescren.png)
+
+### System Info — uname and df
+![uname](Linux-Fundamentals/uname.png)
+
+### Running Processes — ps aux
+![ps aux](Linux-Fundamentals/psaux.png)
+
+### User Permissions and Groups
+![Permissions](Linux-Fundamentals/sudoaccessjohn.png)
+
+---
+
+## SSH
+
+### Summary
+SSH is the primary way administrators access Linux servers remotely. I installed and configured OpenSSH, then hardened it using industry best practices — replacing password login with cryptographic key authentication and locking down the server config to reduce the attack surface.
+
+### What I Did
+- Installed OpenSSH server and confirmed the service was active
+- Connected remotely from Windows PowerShell using password authentication
+- Generated an ed25519 key pair on Windows and deployed the public key to the server
+- Configured passwordless SSH login using authorized_keys
+- Disabled root login, password authentication, and limited login attempts
+- Restricted access to a single user with AllowUsers
+
+**Hardening Settings Applied**
+PermitRootLogin no
+PasswordAuthentication no
+MaxAuthTries 3
+LoginGraceTime 20
+AllowUsers rafael
+X11Forwarding no
+
 **Screenshots**
 
 ### SSH Key Setup
