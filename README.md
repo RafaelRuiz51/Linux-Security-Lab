@@ -1,41 +1,141 @@
-# Linux Security Lab
+**Screenshots**
 
-A hands-on cybersecurity home lab built on Ubuntu 24.04 in VirtualBox.
+### SSH Key Setup
+![SSH Key](SSH/basicsh.png)
 
-## Overview
-Built a fully hardened Linux server from scratch. Implemented SSH hardening, 
-firewall rules, intrusion detection, automated security monitoring, and containerized tooling.
+### PowerShell Remote Connection
+![PowerShell SSH](SSH/powershellssh.png)
 
-## Tools Used
-- VirtualBox
-- Ubuntu 24.04
-- SSH
-- ufw / iptables
-- Fail2ban
-- auditd
-- Nmap
-- Wireshark
-- Python
-- Bash
-- Docker
-- Git
+### Passwordless Login
+![No Password](SSH/sshnopassword.png)
 
-## Topics Covered
+### SSH Activity Logs
+![SSH Logs](SSH/sshactivitylog.png)
 
-### SSH Hardening
-Key-based authentication, disabled root login, MaxAuthTries, AllowUsers restriction.
+### Root Login Blocked
+![Permission Denied](SSH/permissiondeniedroot.png)
 
-### Firewall
-ufw and iptables rules — default deny incoming, allow only SSH and HTTP.
+### Hardened sshd_config
+![Hardened SSH](SSH/hardenssh.png)
 
-### Networking
-IP addressing, DNS queries, port scanning with Nmap, live traffic capture with Wireshark.
+---
 
-### Audit Logging
-auditd watching /etc/passwd and /etc/shadow. Auth log analysis with grep and awk.
+## Networking
 
-### Scripting
-Bash hardening script, Python real-time auth monitor, Python IP alert system with threshold detection.
+Explored network configuration, DNS resolution, port scanning, and live traffic capture.
 
-### Docker
-Containerized the Python security monitor with a custom Dockerfile.
+**What I Did**
+- Checked IP addressing and routing tables
+- Performed DNS lookups using nslookup and dig
+- Scanned open ports and services with Nmap
+- Captured and filtered live network traffic with Wireshark
+
+**Screenshots**
+
+### DNS Records — dig google.com
+![DNS Records](Networking/dnsrecordgoogle.png)
+
+### Traceroute — Hops to Google
+![Traceroute](Networking/hopstogoogle.png)
+
+### Nmap — Open Ports and Services
+![Nmap](Networking/nmapshowingportsandservices.png)
+
+### Port 80 Open — Apache Running
+![Port 80](Networking/port80open.png)
+
+### Port 200 Open
+![Port 200](Networking/port200pen.png)
+
+### curl and ps Output
+![curl ps](Networking/curl&ps.png)
+
+### Wireshark — DNS Traffic
+![Wireshark DNS](Networking/wiresharkDNS.png)
+
+### Wireshark — ICMP Traffic
+![Wireshark ICMP](Networking/wiresharkicmp.png)
+
+---
+
+## Firewall
+
+Configured ufw and iptables to control inbound and outbound network traffic.
+
+**What I Did**
+- Set default deny on all incoming traffic
+- Allowed only SSH (port 22) and HTTP (port 80)
+- Added and removed custom iptables rules
+- Verified active rules with ufw status and iptables -L
+
+**Screenshots**
+
+### ufw Active Rules
+![ufw Rules](Firewall/activityrules.png)
+
+### iptables Rules
+![iptables](Firewall/IPtablerules.png)
+
+---
+
+## Audit Logging
+
+Configured auditd to monitor critical system files and analyzed authentication logs.
+
+**What I Did**
+- Installed and enabled auditd
+- Set watches on /etc/passwd and /etc/shadow
+- Triggered audit events by adding a test user
+- Searched audit logs with ausearch
+- Analyzed auth.log for failed login attempts and suspicious IPs
+
+**Screenshots**
+
+### Audit Event Triggered
+![Audit Event](Audit-Logging/auditevent.png)
+
+### Failed Login Attempts
+![Failed Logins](Audit-Logging/failedloginattempts.png)
+
+### Failed IPs
+![Failed IPs](Audit-Logging/failedIP.png)
+
+---
+
+## Scripting
+
+Built Bash and Python scripts to automate security tasks and monitor system activity.
+
+**What I Did**
+- Wrote a Bash hardening script that configures ufw, Fail2ban, and SSH automatically
+- Built a Python auth monitor that reads /var/log/auth.log and reports system stats every 30 seconds
+- Built a Python IP alert system that detects IPs exceeding a failed login threshold
+
+**Screenshots**
+
+### Bash Script Running
+![Bash](Scripting/bashshowingmyip.png)
+
+### Python Auth Monitor — Live Output
+![Python Monitor](Scripting/pythonmonitorshowinglivests.png)
+
+### Python IP Alert — Alert Firing
+![IP Alert](Scripting/pythonalersystem.png)
+
+---
+
+## Docker
+
+Containerized the Python security monitor using Docker.
+
+**What I Did**
+- Installed Docker on Ubuntu 24.04
+- Ran an Nginx container to verify Docker was working
+- Built a custom Docker image for the Python auth monitor
+- Mounted /var/log as read-only so the container could access live auth logs
+- Verified the monitor was running inside the container using docker logs
+
+**Screenshots**
+
+### Python Script Running in Container
+![Docker Container](Docker/pythonscriptrunningcontainer.png)
