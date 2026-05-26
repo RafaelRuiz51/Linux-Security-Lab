@@ -33,7 +33,7 @@ Explored network configuration, DNS resolution, port scanning, and live traffic 
 **Screenshots**
 
 ### DNS Records — dig google.com
-![DNS Records](Networking/dnsrecordgoogle.png)
+![DNS Records](Networking/dnsrecordgoogle.com.png)
 
 ### Traceroute — Hops to Google
 ![Traceroute](Networking/hopstogoogle.png)
