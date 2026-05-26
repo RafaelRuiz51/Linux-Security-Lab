@@ -126,7 +126,7 @@ Understanding how data moves across a network is essential for any security role
 ![curl ps](Networking/curl&ps.png)
 
 ### Wireshark — DNS Traffic
-![Wireshark DNS](Networking/wireshark_Dns.png)
+![Wireshark DNS](Networking/wiresharkdns.png)
 
 ### Wireshark — ICMP Traffic
 ![Wireshark ICMP](Networking/wiresharkicmp.png)
