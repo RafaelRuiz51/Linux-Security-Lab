@@ -126,7 +126,7 @@ Understanding how data moves across a network is essential for any security role
 ![curl ps](Networking/curl&ps.png)
 
 ### Wireshark — DNS Traffic
-![Wireshark DNS](Networking/wiresharkdns.png)
+![Wireshark DNS](Networking/Wiresharkdns.png)
 
 ### Wireshark — ICMP Traffic
 ![Wireshark ICMP](Networking/wiresharkicmp.png)
@@ -217,4 +217,4 @@ Docker is used in virtually every modern tech environment to run applications in
 **Screenshots**
 
 ### Python Script Running in Container
-![Docker Container](Docker/pythonscriptrunningcontainer.png)
+![Docker Container](Docker/pythonscriptrunningincontainer.png)
