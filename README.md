@@ -38,10 +38,10 @@ Before diving into security, I got comfortable with the Linux environment itself
 **Screenshots**
 
 ### Login Screen
-![Login Screen](Linux-Fundamentals/linuxloginscren.png)
+![Login Screen](Linux-Fundamentals/linuxloginscreen.png)
 
 ### Desktop
-![Desktop](Linux-Fundamentals/linuxhomescren.png)
+![Desktop](Linux-Fundamentals/linuxhomescreen.png)
 
 ### System Info — uname and df
 ![uname](Linux-Fundamentals/uname.png)
