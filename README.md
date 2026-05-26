@@ -38,7 +38,7 @@ Before diving into security I got comfortable with the Linux environment itself.
 ### Login Screen
 ![Login Screen](Linux-Fundamentals/linuxloginscreen.png)
 
-
+![Home Screen](Linux-Fundamentals/linuxhomescreen.png)
 ### System Info — uname
 ![uname](Linux-Fundamentals/uname.png)
 
