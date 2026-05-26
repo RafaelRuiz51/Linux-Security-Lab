@@ -221,4 +221,4 @@ Docker is used in virtually every modern tech environment to run applications in
 **Screenshots**
 
 ### Python Script Running in Container
-![Docker Container](Docker/pythonscriptrunningcontainer.png)
+![Docker Container](Docker/pythonscriptrunningincontainer.png)
