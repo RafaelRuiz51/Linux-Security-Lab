@@ -1,10 +1,10 @@
 **Screenshots**
 
 ### SSH Key Setup
-![SSH Key](SSH/basicsh.png)
+![SSH Key](SSH/basicssh.png)
 
 ### PowerShell Remote Connection
-![PowerShell SSH](SSH/powershellssh.png)
+![PowerShell SSH](SSH/powershellsshd.png)
 
 ### Passwordless Login
 ![No Password](SSH/sshnopassword.png)
@@ -13,7 +13,7 @@
 ![SSH Logs](SSH/sshactivitylog.png)
 
 ### Root Login Blocked
-![Permission Denied](SSH/permissiondeniedroot.png)
+![Permission Denied](SSH/permissiondeniedrootlogin.png)
 
 ### Hardened sshd_config
 ![Hardened SSH](SSH/hardenssh.png)
@@ -39,19 +39,19 @@ Explored network configuration, DNS resolution, port scanning, and live traffic 
 ![Traceroute](Networking/hopstogoogle.png)
 
 ### Nmap — Open Ports and Services
-![Nmap](Networking/nmapshowingportsandservices.png)
+![Nmap](Networking/nmapshowingportsandservicesopen.png)
 
 ### Port 80 Open — Apache Running
 ![Port 80](Networking/port80open.png)
 
 ### Port 200 Open
-![Port 200](Networking/port200pen.png)
+![Port 200](Networking/port20Open.png)
 
 ### curl and ps Output
 ![curl ps](Networking/curl&ps.png)
 
 ### Wireshark — DNS Traffic
-![Wireshark DNS](Networking/wiresharkDNS.png)
+![Wireshark DNS](Networking/wiresharkdns.png)
 
 ### Wireshark — ICMP Traffic
 ![Wireshark ICMP](Networking/wiresharkicmp.png)
@@ -117,10 +117,10 @@ Built Bash and Python scripts to automate security tasks and monitor system acti
 ![Bash](Scripting/bashshowingmyip.png)
 
 ### Python Auth Monitor — Live Output
-![Python Monitor](Scripting/pythonmonitorshowinglivests.png)
+![Python Monitor](Scripting/pythonmonitorshowinglivestats.png)
 
 ### Python IP Alert — Alert Firing
-![IP Alert](Scripting/pythonalersystem.png)
+![IP Alert](Scripting/pythonalertsystem.png)
 
 ---
 
